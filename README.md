@@ -101,8 +101,8 @@ The architecture comprises the following key components:
 
 - [x] 3.1 IDE - Integrated Development Environment;
 - [x] 3.2 Project Creation;
-- [ ] 3.3 Structuring and Entity;
-- [ ] 3.4 Customer Repository;
+- [X] 3.3 Structuring and Entity;
+- [X] 3.4 Customer Repository;
 - [ ] 3.5 Customer Service;
 - [ ] 3.6 Customer Controller;
 - [ ] 3.7 Standardising Responses;
