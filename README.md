@@ -103,8 +103,8 @@ The architecture comprises the following key components:
 - [x] 3.2 Project Creation;
 - [X] 3.3 Structuring and Entity;
 - [X] 3.4 Customer Repository;
-- [ ] 3.5 Customer Service;
-- [ ] 3.6 Customer Controller;
+- [X] 3.5 Customer Service;
+- [X] 3.6 Customer Controller;
 - [ ] 3.7 Standardising Responses;
 - [ ] 3.8 Automatic Account Number Generator;
 - [ ] 3.9 Retrieving All User Accounts;

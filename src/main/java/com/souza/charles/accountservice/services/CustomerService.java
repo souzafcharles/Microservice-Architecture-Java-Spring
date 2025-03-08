@@ -6,6 +6,7 @@ import com.souza.charles.accountservice.repositories.CustomerRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 
@@ -18,6 +19,7 @@ public class CustomerService implements Serializable {
     @Autowired
     private ModelMapper mapper;
 
+    @Transactional
     public CustomerDTO save(CustomerDTO dto) {
         Customer entity = mapper.map(dto, Customer.class);
         entity.setEnable(true);
