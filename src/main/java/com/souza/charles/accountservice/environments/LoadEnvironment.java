@@ -1,4 +1,4 @@
-package com.souza.charles.account_service.environments;
+package com.souza.charles.accountservice.environments;
 
 import io.github.cdimascio.dotenv.Dotenv;
 

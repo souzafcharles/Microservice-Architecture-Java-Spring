@@ -1,4 +1,4 @@
-package com.souza.charles.account_service.entities;
+package com.souza.charles.accountservice.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

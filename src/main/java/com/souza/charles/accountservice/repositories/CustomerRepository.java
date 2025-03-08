@@ -1,6 +1,6 @@
-package com.souza.charles.account_service.repositories;
+package com.souza.charles.accountservice.repositories;
 
-import com.souza.charles.account_service.entities.Customer;
+import com.souza.charles.accountservice.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

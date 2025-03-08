@@ -1,6 +1,6 @@
-package com.souza.charles.account_service;
+package com.souza.charles.accountservice;
 
-import com.souza.charles.account_service.environments.LoadEnvironment;
+import com.souza.charles.accountservice.environments.LoadEnvironment;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
