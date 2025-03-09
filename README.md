@@ -105,7 +105,7 @@ The architecture comprises the following key components:
 - [X] 3.4 Customer Repository;
 - [X] 3.5 Customer Service;
 - [X] 3.6 Customer Controller;
-- [ ] 3.7 Standardising Responses;
+- [X] 3.7 Standardising Responses;
 - [ ] 3.8 Automatic Account Number Generator;
 - [ ] 3.9 Retrieving All User Accounts;
 - [ ] 3.10 Account Validation;
