@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class CustomerMessages implements Serializable {
 
     private CustomerMessages() {
-        throw new IllegalStateException("Utility class");
+        throw new IllegalStateException("Utility class, cannot be instantiated.");
     }
 
     public static final String CUSTOMER_ACCOUNT_CREATED_SUCCESSFULLY = "Customer account created successfully.";
