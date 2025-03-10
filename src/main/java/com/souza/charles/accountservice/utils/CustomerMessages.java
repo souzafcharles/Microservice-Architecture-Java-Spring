@@ -9,7 +9,8 @@ public class CustomerMessages implements Serializable {
     }
 
     public static final String CUSTOMER_ACCOUNT_CREATED_SUCCESSFULLY = "Customer account created successfully.";
-    public static final String CUSTOMER_NOT_FOUND = "Customer not found.";
+    public static final String CUSTOMER_NOT_FOUND = "Customer not found with ID: ";
     public static final String CUSTOMER_ACCOUNT_UPDATE_SUCCESS = "Customer account updated successfully.";
     public static final String CUSTOMER_ACCOUNT_DELETE_SUCCESS = "Customer account deleted successfully.";
+    public static final String CUSTOMER_DELETE_RELATED_DATA = "Cannot delete customer with ID %d due to related data.";
 }

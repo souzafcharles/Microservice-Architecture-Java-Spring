@@ -18,10 +18,29 @@ public class CustomerController extends BaseController implements Serializable {
     @Autowired
     private CustomerService customerService;
 
-
     @PostMapping
-    public ResponseEntity<CustomerDTO> save(@RequestBody CustomerDTO dto) {
-        return getResponseSuccess(customerService.save(dto), CustomerMessages.CUSTOMER_ACCOUNT_CREATED_SUCCESSFULLY, HttpStatus.CREATED);
+    public ResponseEntity<CustomerDTO> create(@RequestBody CustomerDTO dto) {
+        return getResponseSuccess(customerService.create(dto), CustomerMessages.CUSTOMER_ACCOUNT_CREATED_SUCCESSFULLY, HttpStatus.CREATED);
     }
 
+    @GetMapping
+    public ResponseEntity<CustomerDTO> readAll() {
+        return getResponseSuccess(customerService.readAll(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<CustomerDTO> readOne(@PathVariable Long id) {
+        return getResponseSuccess(customerService.readOne(id), HttpStatus.OK);
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<CustomerDTO> update(@PathVariable Long id, @RequestBody CustomerDTO dto) {
+        return getResponseSuccess(customerService.update(id, dto), CustomerMessages.CUSTOMER_ACCOUNT_UPDATE_SUCCESS, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        customerService.delete(id);
+        return getResponseSuccess(null, CustomerMessages.CUSTOMER_ACCOUNT_DELETE_SUCCESS, HttpStatus.OK);
+    }
 }
