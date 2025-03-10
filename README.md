@@ -108,8 +108,8 @@ The architecture comprises the following key components:
 - [X] 3.7 Standardising Responses;
 - [X] 3.8 Automatic Account Number Generator;
 - [X] 3.9 Retrieving All User Accounts;
-- [ ] 3.10 Account Validation;
-- [ ] 3.11 Custom Exception;
+- [X] 3.10 Account Validation;
+- [X] 3.11 Custom Exception;
 - [ ] 3.12 Configuring Redundancy for the Microservice.
 
 ### Module 4

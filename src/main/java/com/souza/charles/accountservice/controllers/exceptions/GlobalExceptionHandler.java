@@ -1,6 +1,7 @@
 package com.souza.charles.accountservice.controllers.exceptions;
 
 import com.souza.charles.accountservice.dtos.ResponseDTO;
+import com.souza.charles.accountservice.exceptions.AccountNotFoundException;
 import com.souza.charles.accountservice.exceptions.CustomerNotFoundException;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -47,6 +48,15 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(ResponseDTO.builder()
                         .message("Cannot delete customer due to related data.")
+                        .port(getPort())
+                        .build());
+    }
+
+    @ExceptionHandler(AccountNotFoundException.class)
+    public ResponseEntity<ResponseDTO> handleAccountNotFoundException(AccountNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ResponseDTO.builder()
+                        .message(ex.getMessage())
                         .port(getPort())
                         .build());
     }

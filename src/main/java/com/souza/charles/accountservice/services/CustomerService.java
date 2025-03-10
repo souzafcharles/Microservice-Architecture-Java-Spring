@@ -3,6 +3,7 @@ package com.souza.charles.accountservice.services;
 import com.souza.charles.accountservice.dtos.CustomerDTO;
 import com.souza.charles.accountservice.dtos.CustomerResponseDTO;
 import com.souza.charles.accountservice.entities.Customer;
+import com.souza.charles.accountservice.exceptions.AccountNotFoundException;
 import com.souza.charles.accountservice.exceptions.CustomerNotFoundException;
 import com.souza.charles.accountservice.repositories.CustomerRepository;
 import com.souza.charles.accountservice.utils.CustomerMessages;
@@ -64,4 +65,12 @@ public class CustomerService implements Serializable {
             throw new RuntimeException(String.format(CustomerMessages.CUSTOMER_DELETE_RELATED_DATA, id));
         }
     }
+
+    @Transactional(readOnly = true)
+    public CustomerResponseDTO isValid(String account) {
+        Customer entity = customerRepository.findByAccountNumber(account)
+                .orElseThrow(() -> new AccountNotFoundException(String.format(CustomerMessages.ACCOUNT_NOT_VALID, account)));
+        return mapper.map(entity, CustomerResponseDTO.class);
+    }
+
 }

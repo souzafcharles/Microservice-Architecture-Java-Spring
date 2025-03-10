@@ -43,4 +43,10 @@ public class CustomerController extends BaseController implements Serializable {
         customerService.delete(id);
         return getResponseSuccess(null, CustomerMessages.CUSTOMER_ACCOUNT_DELETE_SUCCESS, HttpStatus.OK);
     }
+
+    @GetMapping("/validate/{account}")
+    public ResponseEntity<CustomerDTO> isValid(@PathVariable String account) {
+        return getResponseSuccess(customerService.isValid(account), HttpStatus.OK);
+    }
+
 }
