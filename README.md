@@ -22,7 +22,7 @@ The system employs a layered architecture, with the API Gateway providing an abs
 ***
 ## Project Microservice Architecture:
 
-![Microservice Architecture](https://github.com/souzafcharles/Microservice-Architecture-Java-Spring/blob/main/src/main/resources/static/images/microservice-architecture.png)
+![Microservice Architecture](https://github.com/souzafcharles/Microservice-Architecture-Java-Spring/blob/main/account-service/src/main/resources/static/images/microservice-architecture.png)
 
 The architecture comprises the following key components:
 
@@ -56,7 +56,7 @@ The architecture comprises the following key components:
 | Technology        | Version    | Description                                       |
 |-------------------|------------|---------------------------------------------------|
 | 📐 IntelliJ IDEA  | `2024.3`   | Integrated Development Environment (IDE)          |
-| ☕ Java            | `21`       | Backend programming language                      |
+| ☕ Java           | `21`       | Backend programming language                      |
 | 🌱 Spring Boot    | `3.4.3`    | Framework for creating Spring applications        |
 | 🐦 Maven          | `3.9.9`    | Build automation and dependency management tool   |
 | 🐬 MySQL          | `9.2.0`    | Open-source relational database management system |
@@ -64,20 +64,23 @@ The architecture comprises the following key components:
 | ☁️ Spring Cloud   | `2024.0.0` | Framework for building cloud-native applications  |
 | 🧭 Netflix Eureka | `3.0.0`    | Service registry and discovery server             |
 | 🔗 OpenFeign      | `4.2.0`    | Declarative REST client                           |
-| 👩‍🚀 Postman     | `11.19`    | API testing and development tool                  |
+| 👩‍🚀 Postman        | `11.19`    | API testing and development tool                  |
 
 ***
 
-## Dependencies:
+## Dependencies
 
-| Dependency         | Category         | Description                                                                                                     |
-|--------------------|------------------|-----------------------------------------------------------------------------------------------------------------|
-| 🌐 Spring Web      | Web              | Builds web applications, including RESTful APIs, using Spring MVC. Uses Apache Tomcat as the default container. |
-| 💾 Spring Data JPA | SQL              | Facilitates database access using JPA with Spring Data and Hibernate.                                           |
-| 🐘 MySQL Driver    | SQL              | Provides connectivity to MySQL databases from the Java application.                                             |
-| 🌶️ Lombok         | Developer Tools  | Java annotation library which helps to reduce boilerplate code.                                                 |
-| ✔️ Validation      | Validation (I/O) | Enables Java Bean Validation using Hibernate Validator.                                                         |
-| 🗝️ dotenv-java    | Configuration    | Loads environment variables from a `.env` file into the application, aiding in secure configuration management. |
+| Dependency             | Category         | Description                                                                                   |
+|------------------------|------------------|-----------------------------------------------------------------------------------------------|
+| 🌐 Spring Web          | Web              | Build web, including RESTful, applications using Spring MVC                                   |
+| 💾 Spring Data JPA     | SQL              | Simplifies database interactions using JPA with Spring Data and Hibernate.                    |
+| 🐘 MySQL Driver        | SQL              | Provides connectivity between Java applications and MySQL databases.                          |
+| 🍃 Spring Data MongoDB | NoSQL            | Provides integration with MongoDB, allowing data access in a reactive or blocking way.        |
+| 🌶️ Lombok              | Developer Tools  | A Java annotation library that minimises boilerplate code.                                    |
+| ✔️ Validation          | Validation (I/O) | Enables Java Bean Validation with Hibernate Validator.                                        |
+| 🔗 OpenFeign           | Cloud            | Simplifies HTTP API client creation with declarative REST clients.                            |
+| 🔄 ModelMapper         | Utility          | A library that simplifies object mapping by automatically mapping properties between objects. |
+| 🗝️ dotenv-java         | Configuration    | Loads environment variables from a `.env` file, aiding secure configuration management.       |
 
 ***
 
@@ -97,7 +100,7 @@ The architecture comprises the following key components:
 
 ### Module 3
 
-(Microservice 1 - Account)
+(Microservice 1 - Bank Account)
 
 - [x] 3.1 IDE - Integrated Development Environment;
 - [x] 3.2 Project Creation;
@@ -110,14 +113,14 @@ The architecture comprises the following key components:
 - [X] 3.9 Retrieving All User Accounts;
 - [X] 3.10 Account Validation;
 - [X] 3.11 Custom Exception;
-- [ ] 3.12 Configuring Redundancy for the Microservice.
+- [X] 3.12 Configuring Redundancy for the Microservice.
 
 ### Module 4
 
 (Microservice 2 - Bank Transactions)
 
-- [ ] 4.1 Microservice Creation and Structuring;
-- [ ] 4.2 MongoDB Configuration and Entities;
+- [X] 4.1 Microservice Creation and Structuring;
+- [X] 4.2 MongoDB Configuration and Entities;
 - [ ] 4.3 Repository;
 - [ ] 4.4 Transaction Controller;
 - [ ] 4.5 Transaction Service;
