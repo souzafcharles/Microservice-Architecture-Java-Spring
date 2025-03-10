@@ -121,7 +121,7 @@ The architecture comprises the following key components:
 
 - [X] 4.1 Microservice Creation and Structuring;
 - [X] 4.2 MongoDB Configuration and Entities;
-- [ ] 4.3 Repository;
+- [X] 4.3 Repositories;
 - [ ] 4.4 Transaction Controller;
 - [ ] 4.5 Transaction Service;
 - [ ] 4.6 Using OpenFeign to Validate User Account;
