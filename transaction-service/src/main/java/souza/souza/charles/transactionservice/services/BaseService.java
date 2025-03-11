@@ -8,5 +8,7 @@ public class BaseService {
 
     protected final ModelMapper mapper;
 
-    public BaseService() {this.mapper = new ModelMapper();}
+    public BaseService() {
+        this.mapper = new ModelMapper();
+    }
 }

@@ -3,7 +3,7 @@ package souza.souza.charles.transactionservice.services;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import souza.souza.charles.transactionservice.dtos.ResponseDTO;
-import souza.souza.charles.transactionservice.exceptions.InvalidUserAccountException;
+import souza.souza.charles.transactionservice.exceptions.InvalidCustomerAccountException;
 import souza.souza.charles.transactionservice.request.AccountRequest;
 
 import java.io.Serializable;
@@ -23,7 +23,7 @@ public class AccountValidationService implements Serializable {
         ResponseDTO responseDTO = accountRequest.getUserAccount(accountNumber);
 
         if (Objects.isNull(responseDTO.getData()))
-            throw new InvalidUserAccountException(responseDTO.getMessage());
+            throw new InvalidCustomerAccountException(responseDTO.getMessage());
 
         return true;
     }
