@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import souza.souza.charles.transactionservice.dtos.TransactionRequestDTO;
+import souza.souza.charles.transactionservice.services.AccountValidationService;
 import souza.souza.charles.transactionservice.services.TransactionService;
 import souza.souza.charles.transactionservice.utils.TransactionMessages;
 
@@ -20,8 +21,15 @@ public class TransactionController extends BaseController implements Serializabl
     @Autowired
     private TransactionService transactionService;
 
+    private final AccountValidationService accountValidationService;
+
+    public TransactionController(AccountValidationService accountValidationService) {
+        this.accountValidationService = accountValidationService;
+    }
+
     @PostMapping()
     public ResponseEntity create(@RequestBody TransactionRequestDTO transactionRequestDTO) {
+        accountValidationService.verifyAccount(transactionRequestDTO.getAccountNumber());
         String message = transactionRequestDTO.getOperation() + TransactionMessages.TRANSACTION_REGISTRATION;
         return getResponseSuccess(transactionService.create(transactionRequestDTO), message, HttpStatus.CREATED);
     }
