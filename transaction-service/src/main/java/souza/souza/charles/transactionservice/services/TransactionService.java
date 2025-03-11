@@ -10,6 +10,7 @@ import souza.souza.charles.transactionservice.repositories.TransactionRepository
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Service
 public class TransactionService extends BaseService implements Serializable {
@@ -18,9 +19,9 @@ public class TransactionService extends BaseService implements Serializable {
     private TransactionRepository transactionRepository;
 
     @Transactional
-    public Object save(TransactionRequestDTO dto){
+    public Object create(TransactionRequestDTO dto){
         Transaction newTransaction = mapper.map(dto, Transaction.class);
-        newTransaction.setDate(LocalDateTime.now());
+        newTransaction.setDate(LocalDateTime.now((ZoneId.of("UTC"))));
         return transactionRepository.save(newTransaction);
     }
 }

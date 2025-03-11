@@ -22,10 +22,10 @@ public class BaseController implements Serializable {
     }
 
     protected ResponseEntity getResponseSuccess(Object data, String message, HttpStatus status) {
-        return new ResponseEntity(ResponseDTO.builder().port(getPort()).message(message).build(), status);
+        return new ResponseEntity(ResponseDTO.builder().data(data).port(getPort()).message(message).build(), status);
     }
 
     protected ResponseEntity getResponseSuccess(Object data, HttpStatus status) {
-        return new ResponseEntity(ResponseDTO.builder().port(getPort()).build(), status);
+        return new ResponseEntity(ResponseDTO.builder().data(data).port(getPort()).build(), status);
     }
 }

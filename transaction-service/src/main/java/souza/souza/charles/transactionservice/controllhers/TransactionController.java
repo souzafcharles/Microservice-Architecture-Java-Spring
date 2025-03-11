@@ -23,6 +23,6 @@ public class TransactionController extends BaseController implements Serializabl
     @PostMapping()
     public ResponseEntity create(@RequestBody TransactionRequestDTO transactionRequestDTO) {
         String message = transactionRequestDTO.getOperation() + TransactionMessages.TRANSACTION_REGISTRATION;
-        return getResponseSuccess(transactionService.save(transactionRequestDTO), message, HttpStatus.CREATED);
+        return getResponseSuccess(transactionService.create(transactionRequestDTO), message, HttpStatus.CREATED);
     }
 }
