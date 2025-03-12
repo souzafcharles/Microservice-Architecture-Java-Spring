@@ -77,10 +77,11 @@ The architecture comprises the following key components:
 | 🐘 MySQL Driver          | SQL              | Provides connectivity between Java applications and MySQL databases.                          |
 | 🍃 Spring Data MongoDB   | NoSQL            | Provides integration with MongoDB, allowing data access in a reactive or blocking way.        |
 | 🌶️ Lombok                | Developer Tools  | A Java annotation library that minimises boilerplate code.                                    |
-| ✔️ Validation            | Validation (I/O) | Enables Java Bean Validation with Hibernate Validator.                                        |
 | 🔗 OpenFeign             | Cloud            | Simplifies HTTP API client creation with declarative REST clients.                            |
-| 🔄 ModelMapper           | Utility          | A library that simplifies object mapping by automatically mapping properties between objects. |
 | 🧭 Netflix Eureka Server | Cloud            | Provides a service registry for microservices architecture using Eureka Server.               |
+| ⚖️ Load Balancer         | Cloud            | Provides client-side load balancing.                                                          |
+| 🚪 Gateway               | Cloud            | Provides a library for building API Gateways on top of Spring MVC.                            |
+| 🔄 ModelMapper           | Utility          | A library that simplifies object mapping by automatically mapping properties between objects. |
 | 🗝️ dotenv-java           | Configuration    | Loads environment variables from a `.env` file, aiding secure configuration management.       |
 
 ***
@@ -139,12 +140,12 @@ The architecture comprises the following key components:
 
 - [X] 5.1 Introduction to Discovery Service;
 - [X] 5.2 Implementing Discovery Service and Registering Microservices;
-- [ ] 5.3 Load Balancing.
+- [X] 5.3 Load Balancing.
 
 ### Module 6
 
-- [ ] 6.1 Introduction to API Gateway;
-- [ ] 6.2 API Gateway Project Creation and Configuration;
+- [X] 6.1 Introduction to API Gateway;
+- [X] 6.2 API Gateway Project Creation and Configuration;
 - [ ] 6.3 Testing the API Gateway Service;
 - [ ] 6.4 Configuring Routes.
 
