@@ -42,12 +42,12 @@ public class TransferService extends BaseService {
         var transfers = transferRepository.getTransfersByAccountFrom(accountNumber);
         Type listType = new TypeToken<List<TransferResponseDTO>>() {}.getType();
         List<TransferResponseDTO> transferResponse = mapper.map(transfers, listType);
-        transferResponse.forEach(t -> {
-            if (t.getAccountFrom().equals(accountNumber)) {
-                t.setOperation(Operation.Transfer_Sent);
-                t.setValue(t.getValue().negate());
+        transferResponse.forEach(transfer -> {
+            if (transfer.getAccountFrom().equals(accountNumber)) {
+                transfer.setOperation(Operation.Transfer_Sent);
+                transfer.setValue(transfer.getValue().negate());
             } else {
-                t.setOperation(Operation.Transfer_Received);
+                transfer.setOperation(Operation.Transfer_Received);
             }
         });
         return transferResponse;
