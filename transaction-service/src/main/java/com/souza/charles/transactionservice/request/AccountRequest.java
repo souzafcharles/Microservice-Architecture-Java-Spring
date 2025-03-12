@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.souza.charles.transactionservice.dtos.ResponseDTO;
 
-@FeignClient(name = "customers", url = "http://localhost:8000")
+
+@FeignClient(name = "account-service")
 public interface AccountRequest {
 
     @GetMapping("/customers/validate/{account}")
