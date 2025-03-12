@@ -102,7 +102,7 @@ The architecture comprises the following key components:
 
 (Microservice 1 - Bank Account)
 
-- [x] 3.1 IDE - Integrated Development Environment;
+- [x] 3.1 IDE Configuration;
 - [x] 3.2 Project Creation;
 - [X] 3.3 Structuring and Entity;
 - [X] 3.4 Customer Repository;
