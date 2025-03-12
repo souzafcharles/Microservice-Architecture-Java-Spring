@@ -6,12 +6,11 @@ import souza.souza.charles.transactionservice.dtos.ResponseDTO;
 import souza.souza.charles.transactionservice.exceptions.InvalidCustomerAccountException;
 import souza.souza.charles.transactionservice.request.AccountRequest;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 @Service
 @Scope("singleton")
-public class AccountValidationService implements Serializable {
+public class AccountValidationService {
 
     private final AccountRequest accountRequest;
 

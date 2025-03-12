@@ -3,29 +3,32 @@ package souza.souza.charles.transactionservice.services;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import souza.souza.charles.transactionservice.dtos.TransferRequestDTO;
 import souza.souza.charles.transactionservice.dtos.TransferResponseDTO;
 import souza.souza.charles.transactionservice.entities.Transfer;
 import souza.souza.charles.transactionservice.repositories.TransferRepository;
 import souza.souza.charles.transactionservice.utils.Operation;
 
-import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 
 @Service
-public class TransferService extends BaseService implements Serializable {
+public class TransferService extends BaseService {
 
     @Autowired
     TransferRepository transferRepository;
 
-    public Object save(TransferRequestDTO dto) {
-        dto.setDateTime(LocalDateTime.now());
+    @Transactional
+    public Object create(TransferRequestDTO dto) {
+        dto.setDateTime(LocalDateTime.now((ZoneId.of("UTC"))));
         Transfer transfer = mapper.map(dto, Transfer.class);
         return transferRepository.save(transfer);
     }
 
+    @Transactional(readOnly = true)
     public List<TransferResponseDTO> getAllByAccountNumber(String accountNumber) {
         var transfers = transferRepository.getTransfersByAccountFrom(accountNumber);
         Type listType = new TypeToken<List<TransferResponseDTO>>() {

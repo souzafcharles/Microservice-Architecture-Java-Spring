@@ -18,11 +18,8 @@ public class TransactionController extends BaseController implements Serializabl
     @Autowired
     private TransactionService transactionService;
 
-    private final AccountValidationService accountValidationService;
-
-    public TransactionController(AccountValidationService accountValidationService) {
-        this.accountValidationService = accountValidationService;
-    }
+    @Autowired
+    private AccountValidationService accountValidationService;
 
     @PostMapping()
     public ResponseEntity create(@RequestBody TransactionRequestDTO transactionRequestDTO) {

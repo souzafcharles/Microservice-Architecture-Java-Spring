@@ -125,14 +125,14 @@ The architecture comprises the following key components:
 - [X] 4.4 Transaction Controller;
 - [X] 4.5 Transaction Service;
 - [X] 4.6 Using OpenFeign to Validate Customer Account;
-- [ ] 4.7 Custom Exception for Account Validation;
-- [ ] 4.8 Calculating Account Balance;
-- [ ] 4.9 Implementing Account Statement;
-- [ ] 4.10 Transfer Controller;
-- [ ] 4.11 Inter-Account Transfer;
-- [ ] 4.12 Transfer Statement Business Logic;
-- [ ] 4.13 Statement for Destination Account;
-- [ ] 4.14 Retrieving All Account Transfers.
+- [X] 4.7 Custom Exception for Account Validation;
+- [X] 4.8 Calculating Account Balance;
+- [X] 4.9 Implementing Account Statement;
+- [X] 4.10 Transfer Controller;
+- [X] 4.11 Inter-Account Transfer;
+- [X] 4.12 Transfer Statement Business Logic;
+- [X] 4.13 Statement for Destination Account;
+- [X] 4.14 Retrieving All Account Transfers.
 
 ### Module 5
 

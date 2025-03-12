@@ -11,8 +11,6 @@ import souza.souza.charles.transactionservice.dtos.TransferResponseDTO;
 import souza.souza.charles.transactionservice.entities.Transaction;
 import souza.souza.charles.transactionservice.repositories.TransactionRepository;
 
-
-import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -20,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TransactionService extends BaseService implements Serializable {
+public class TransactionService extends BaseService {
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -29,10 +27,10 @@ public class TransactionService extends BaseService implements Serializable {
     private TransferService transferService;
 
     @Transactional
-    public Object create(TransactionRequestDTO dto) {
+    public TransactionDTO create(TransactionRequestDTO dto) {
         Transaction newTransaction = mapper.map(dto, Transaction.class);
         newTransaction.setDate(LocalDateTime.now((ZoneId.of("UTC"))));
-        return transactionRepository.save(newTransaction);
+        return mapper.map(transactionRepository.save(newTransaction), TransactionDTO.class);
     }
 
     @Transactional(readOnly = true)
@@ -45,6 +43,7 @@ public class TransactionService extends BaseService implements Serializable {
         return dto;
     }
 
+    @Transactional(readOnly = true)
     private List<TransactionDTO> getAllTransactions(String accountNumber) {
         List<TransactionDTO> transactions = new ArrayList<>();
         transactions.addAll(getTransactions(accountNumber));
@@ -52,6 +51,7 @@ public class TransactionService extends BaseService implements Serializable {
         return transactions;
     }
 
+    @Transactional(readOnly = true)
     private List<TransactionDTO> getTransactions(String accountNumber) {
         var transactions = transactionRepository.getTransactionsByAccountNumber(accountNumber);
 
@@ -60,6 +60,7 @@ public class TransactionService extends BaseService implements Serializable {
         return mapper.map(transactions, listType);
     }
 
+    @Transactional(readOnly = true)
     private List<TransactionDTO> getTransfers(String accountNumber) {
         var transfers = transferService.getAllByAccountNumber(accountNumber);
         Type listType = new TypeToken<List<TransferResponseDTO>>() {
