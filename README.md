@@ -80,7 +80,7 @@ The architecture comprises the following key components:
 | 🔗 OpenFeign             | Cloud            | Simplifies HTTP API client creation with declarative REST clients.                            |
 | 🧭 Netflix Eureka Server | Cloud            | Provides a service registry for microservices architecture using Eureka Server.               |
 | ⚖️ Load Balancer         | Cloud            | Provides client-side load balancing.                                                          |
-| 🚪 Gateway               | Cloud            | Provides a library for building API Gateways on top of Spring MVC.                            |
+| 🚪 Gateway               | Cloud            | Provides a library for building API Gateways on top of Spring WebFlux.                        |
 | 🔄 ModelMapper           | Utility          | A library that simplifies object mapping by automatically mapping properties between objects. |
 | 🗝️ dotenv-java           | Configuration    | Loads environment variables from a `.env` file, aiding secure configuration management.       |
 
@@ -146,8 +146,8 @@ The architecture comprises the following key components:
 
 - [X] 6.1 Introduction to API Gateway;
 - [X] 6.2 API Gateway Project Creation and Configuration;
-- [ ] 6.3 Testing the API Gateway Service;
-- [ ] 6.4 Configuring Routes.
+- [X] 6.3 Testing the API Gateway Service;
+- [X] 6.4 Configuring Routes.
 
 ### Module 7
 
