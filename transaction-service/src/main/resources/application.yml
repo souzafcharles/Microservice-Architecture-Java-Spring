@@ -10,3 +10,11 @@ server:
     client:
       service-url:
         defaultZone: http://localhost:8761/eureka
+  resilience4j:
+    retry:
+      instances:
+        default:
+          max-attempts: 4
+        account:
+          max-attempts: 5
+          wait-duration: 5s
