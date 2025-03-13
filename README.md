@@ -26,20 +26,20 @@ The system employs a layered architecture, with the API Gateway providing an abs
 
 The architecture comprises the following key components:
 
-* **account-service:**
+* [account-service:](https://github.com/souzafcharles/Microservice-Architecture-Java-Spring/tree/main/account-service)
     * Manages customer account data stored in a MySQL database;
     * Provides RESTful APIs for account creation, retrieval, and validation;
     * Operates with redundancy across ports 8000 and 8001.
-* **transaction-service:**
+* [transaction-service:](https://github.com/souzafcharles/Microservice-Architecture-Java-Spring/tree/main/transaction-service)
     * Handles bank transactions, storing transaction data in MongoDB;
     * Offers APIs for deposits, withdrawals, and inter-account transfers;
     * Utilises OpenFeign to communicate with the Account Service for account validation;
     * Operates with redundancy across ports 8080 and 8081.
-* **discovery-service:**
+* [discovery-service:](https://github.com/souzafcharles/Microservice-Architecture-Java-Spring/tree/main/api-gateway)
     * Uses Netflix Eureka to enable service registration and discovery;
     * Facilitates dynamic service location and load balancing;
     * Operates on port 8761.
-* **api-gateway:**
+* [api-gateway:](https://github.com/souzafcharles/Microservice-Architecture-Java-Spring/tree/main/api-gateway)
     * Acts as a single entry point for client requests;
     * Routes requests to the appropriate microservices;
     * Operates on port 8765.
@@ -53,18 +53,19 @@ The architecture comprises the following key components:
 
 ## Project Stack:
 
-| Technology        | Version    | Description                                       |
-|-------------------|------------|---------------------------------------------------|
-| 📐 IntelliJ IDEA  | `2024.3`   | Integrated Development Environment (IDE)          |
-| ☕ Java           | `21`       | Backend programming language                      |
-| 🌱 Spring Boot    | `3.4.3`    | Framework for creating Spring applications        |
-| 🐦 Maven          | `3.9.9`    | Build automation and dependency management tool   |
-| 🐬 MySQL          | `9.2.0`    | Open-source relational database management system |
-| 🍃 MongoDB        | `8.0`      | NoSQL document-oriented database                  |
-| ☁️ Spring Cloud   | `2024.0.0` | Framework for building cloud-native applications  |
-| 🧭 Netflix Eureka | `3.0.0`    | Service registry and discovery server             |
-| 🔗 OpenFeign      | `4.2.0`    | Declarative REST client                           |
-| 👩‍🚀 Postman        | `11.19`    | API testing and development tool                  |
+| Technology        | Version    | Description                                        |
+|-------------------|------------|----------------------------------------------------|
+| 📐 IntelliJ IDEA  | `2024.3`   | Integrated Development Environment (IDE)           |
+| ☕ Java           | `21`       | Backend programming language                       |
+| 🌱 Spring Boot    | `3.4.3`    | Framework for creating Spring applications         |
+| 🐦 Maven          | `3.9.9`    | Build automation and dependency management tool    |
+| 🐬 MySQL          | `9.2.0`    | Open-source relational database management system  |
+| 🍃 MongoDB        | `8.0`      | NoSQL document-oriented database                   |
+| ☁️ Spring Cloud   | `2024.0.0` | Framework for building cloud-native applications   |
+| 🧭 Netflix Eureka | `3.0.0`    | Service registry and discovery server              |
+| 🔗 OpenFeign      | `4.2.0`    | Declarative REST client                            |
+| 🔄 Resilience4j   | `2.3.0`    | Fault tolerance library for microservices          |
+| 👩‍🚀 Postman        | `11.19`    | API testing and development tool                   |
 
 ***
 
@@ -73,16 +74,19 @@ The architecture comprises the following key components:
 | Dependency               | Category         | Description                                                                                   |
 |--------------------------|------------------|-----------------------------------------------------------------------------------------------|
 | 🌐 Spring Web            | Web              | Build web, including RESTful, applications using Spring MVC                                   |
-| 💾 Spring Data JPA       | SQL              | Simplifies database interactions using JPA with Spring Data and Hibernate.                    |
-| 🐘 MySQL Driver          | SQL              | Provides connectivity between Java applications and MySQL databases.                          |
-| 🍃 Spring Data MongoDB   | NoSQL            | Provides integration with MongoDB, allowing data access in a reactive or blocking way.        |
-| 🌶️ Lombok                | Developer Tools  | A Java annotation library that minimises boilerplate code.                                    |
-| 🔗 OpenFeign             | Cloud            | Simplifies HTTP API client creation with declarative REST clients.                            |
-| 🧭 Netflix Eureka Server | Cloud            | Provides a service registry for microservices architecture using Eureka Server.               |
-| ⚖️ Load Balancer         | Cloud            | Provides client-side load balancing.                                                          |
-| 🚪 Gateway               | Cloud            | Provides a library for building API Gateways on top of Spring WebFlux.                        |
-| 🔄 ModelMapper           | Utility          | A library that simplifies object mapping by automatically mapping properties between objects. |
-| 🗝️ dotenv-java           | Configuration    | Loads environment variables from a `.env` file, aiding secure configuration management.       |
+| 💾 Spring Data JPA       | SQL              | Simplifies database interactions using JPA with Spring Data and Hibernate                     |
+| 🐘 MySQL Driver          | SQL              | Provides connectivity between Java applications and MySQL databases                           |
+| 🍃 Spring Data MongoDB   | NoSQL            | Provides integration with MongoDB, allowing data access in a reactive or blocking way         |
+| 🌶️ Lombok                | Developer Tools  | A Java annotation library that minimises boilerplate code                                     |
+| 🔗 OpenFeign             | Cloud            | Simplifies HTTP API client creation with declarative REST clients                             |
+| 🧭 Netflix Eureka Server | Cloud            | Provides a service registry for microservices architecture using Eureka Server                |
+| ⚖️ Load Balancer         | Cloud            | Provides client-side load balancing                                                           |
+| 🚪 Gateway               | Cloud            | Provides a library for building API Gateways on top of Spring WebFlux                         |
+| 🗺️ ModelMapper           | Utility          | A library that simplifies object mapping by automatically mapping properties between objects  |
+| 🔄 Resilience4j          | Fault Tolerance  | Provides circuit breakers, rate limiters, retries, and bulkheads for microservices            |
+| ▶ Actuator               | Monitoring       | Provides production-ready features for monitoring and managing applications                   |
+| 🔍 AOP                   | Aspect-Oriented  | Enables aspect-oriented programming with Spring AOP and AspectJ                               |
+| 🗝️ dotenv-java           | Configuration    | Loads environment variables from a `.env` file, aiding secure configuration management        |
 
 ***
 
@@ -151,7 +155,9 @@ The architecture comprises the following key components:
 
 ### Module 7
 
-- [ ] 7.1 Retry;
-- [ ] 7.2 Retry Attempts;
-- [ ] 7.3 Fallback Method - Custom Exception;
-- [ ] 7.4 Wait Duration.
+- [X] 7.1 Retry with Resilience4j;
+- [X] 7.2 Retry Attempts;
+- [X] 7.3 Fallback Method - Custom Exception;
+- [X] 7.4 Wait Duration.
+
+✅ [CERTIFICATE OF ACHIEVEMENT](https://www.udemy.com/certificate/UC-e307d4c6-ad49-42bd-bbb3-eae9e54b3f1d/)
